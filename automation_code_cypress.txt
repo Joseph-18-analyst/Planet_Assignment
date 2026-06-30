@@ -1,0 +1,65 @@
+describe('template spec', () => {
+  it('passes', () => {
+    cy.visit('https://globaltes-taxfree.planetpayment.com/ShopperPortalEU/')
+  
+ cy.pause();
+ 
+    // testEmail is your variable with a valid email
+const testEmail = "cherainliz@gmail.com";
+ cy.pause();
+// Wait for the input, make sure it's visible, clear it, and type email
+cy.get('#Input_Email', { timeout: 10000 })   // waits up to 10s
+  .should('be.visible')                             // ensures it's on screen
+  .clear()                                          // clears any pre-filled text
+  .type(testEmail, { delay: 100 })   
+   cy.pause();
+  cy.contains('Continue').click();
+  cy.pause();
+
+  cy.pause();
+
+  /*cy.get('.custom-button__content.ph').click();
+  cy.get('#b29-Content', { timeout: 10000 })
+  .should('be.visible')
+  .click()
+const passport_num = "N145735";
+ cy.pause();
+// Wait for the input, make sure it's visible, clear it, and type email
+cy.get('#Input_PassportNumber', { timeout: 10000 })   // waits up to 10s
+  .should('be.visible')                             // ensures it's on screen
+  .clear()                                          // clears any pre-filled text
+  .type(passport_num, { delay: 100 })
+   cy.pause();
+   cy.get('date-picker__input-icon').click();
+  cy.get('#b26-b3-Content').click();
+   cy.pause();
+   
+    cy.pause();
+    cy.pause();*/
+ //cy.contains('.custom-dropdown-list__list', /^India$/).click();
+ const given_name = "Joseph"
+ cy.get('#Input_GivenNames', { timeout: 10000 })   // waits up to 10s
+  .should('be.visible')                             // ensures it's on screen
+  .clear()                                          // clears any pre-filled text
+  .type(given_name, { delay: 100 })
+   cy.pause();
+   const surname = "George"
+ cy.get('#Input_Surname', { timeout: 10000 })   // waits up to 10s
+  .should('be.visible')                             // ensures it's on screen
+  .clear()                                          // clears any pre-filled text
+  .type(surname, { delay: 100 })
+    cy.get('.date-picker__input-icon').click();
+  cy.get('.custom-dropdown-list__selected-item custom-dropdown-list__selected-item--placeholder').click();
+
+});  
+
+})
+ // cy.mailslurp().then(mailslurp => mailslurp.createInbox())
+  //.then(inbox => {
+    //cy.log("New email: " + inbox.emailAddress);
+  //});
+//})
+// 2. Enter a new valid email
+ 
+   //cy.get('.email-input').type(testEmail);
+    //cy.contains('Continue').click();
